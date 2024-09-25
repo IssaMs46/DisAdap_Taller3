@@ -1,15 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Compra de Productos - Hotel</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<h1> PÁGINA DE HOTEL SISISI</h1>
-
-
+    <h1>Compra de Productos</h1>
     
+    <!-- Galería de Productos -->
+    <div class="gallery">
+        <div class="product">
+            <img src="ruta-a-tu-imagen1.jpg" alt="Estadía">
+            <h3>Estadía</h3>
+            <button onclick="addToCart('Estadía')">Agregar al Carrito</button>
+        </div>
+
+        <div class="product">
+            <img src="ruta-a-tu-imagen2.jpg" alt="Tours">
+            <h3>Tours</h3>
+            <button onclick="addToCart('Tours')">Agregar al Carrito</button>
+        </div>
+
+        <div class="product">
+            <img src="ruta-a-tu-imagen3.jpg" alt="Rentar Carro">
+            <h3>Rentar Carro</h3>
+            <button onclick="addToCart('Rentar Carro')">Agregar al Carrito</button>
+        </div>
+
+        <div class="product">
+            <img src="ruta-a-tu-imagen4.jpg" alt="Masajes">
+            <h3>Masajes</h3>
+            <button onclick="addToCart('Masajes')">Agregar al Carrito</button>
+        </div>
+
+        <div class="product">
+            <img src="ruta-a-tu-imagen5.jpg" alt="Mejora de Habitación">
+            <h3>Mejora de Habitación</h3>
+            <button onclick="addToCart('Mejora de Habitación')">Agregar al Carrito</button>
+        </div>
+    </div>
+
+    <!-- Carrito -->
+    <h2>Carrito</h2>
+    <div id="cart">
+        <p>Tu carrito está vacío.</p>
+    </div>
+
+    <!-- Botón de Checkout -->
+    <button id="checkout">Checkout</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
