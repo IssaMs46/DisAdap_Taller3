@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compra de Productos - Hotel</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h1>Compra de Productos</h1>
@@ -14,31 +14,36 @@
         <div class="product">
             <img src="ruta-a-tu-imagen1.jpg" alt="Estadía">
             <h3>Estadía</h3>
-            <button onclick="addToCart('Estadía')">Agregar al Carrito</button>
+            <p>$100</p>
+            <button onclick="addToCart('Estadía', 100)">Agregar al Carrito</button>
         </div>
 
         <div class="product">
             <img src="ruta-a-tu-imagen2.jpg" alt="Tours">
             <h3>Tours</h3>
-            <button onclick="addToCart('Tours')">Agregar al Carrito</button>
+            <p>$150</p>
+            <button onclick="addToCart('Tours', 150)">Agregar al Carrito</button>
         </div>
 
         <div class="product">
             <img src="ruta-a-tu-imagen3.jpg" alt="Rentar Carro">
             <h3>Rentar Carro</h3>
-            <button onclick="addToCart('Rentar Carro')">Agregar al Carrito</button>
+            <p>$200</p>
+            <button onclick="addToCart('Rentar Carro', 200)">Agregar al Carrito</button>
         </div>
 
         <div class="product">
             <img src="ruta-a-tu-imagen4.jpg" alt="Masajes">
             <h3>Masajes</h3>
-            <button onclick="addToCart('Masajes')">Agregar al Carrito</button>
+            <p>$80</p>
+            <button onclick="addToCart('Masajes', 80)">Agregar al Carrito</button>
         </div>
 
         <div class="product">
             <img src="ruta-a-tu-imagen5.jpg" alt="Mejora de Habitación">
             <h3>Mejora de Habitación</h3>
-            <button onclick="addToCart('Mejora de Habitación')">Agregar al Carrito</button>
+            <p>$120</p>
+            <button onclick="addToCart('Mejora de Habitación', 120)">Agregar al Carrito</button>
         </div>
     </div>
 
@@ -48,9 +53,12 @@
         <p>Tu carrito está vacío.</p>
     </div>
 
+    <!-- Total del Carrito -->
+    <h3 id="total">Total: $0</h3>
+
     <!-- Botón de Checkout -->
     <button id="checkout">Checkout</button>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

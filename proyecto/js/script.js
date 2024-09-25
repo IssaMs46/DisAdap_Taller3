@@ -1,33 +1,46 @@
 let cart = [];
+let total = 0;
 
-function addToCart(product) {
-    // Agrega el producto al carrito
-    cart.push(product);
-    // Actualiza el DOM
+// Función para agregar productos al carrito
+function addToCart(product, price) {
+    // Añade el producto y su precio al array del carrito
+    cart.push({ product, price });
+    // Actualiza el total
+    total += price;
+    // Muestra el carrito actualizado
     displayCart();
 }
 
+// Función para eliminar productos del carrito
 function removeFromCart(index) {
-    // Elimina el producto del carrito por índice
+    // Resta el precio del producto eliminado del total
+    total -= cart[index].price;
+    // Remueve el producto del array usando el índice
     cart.splice(index, 1);
-    // Actualiza el DOM
+    // Muestra el carrito actualizado
     displayCart();
 }
 
+// Función para mostrar el carrito y el total
 function displayCart() {
     const cartDiv = document.getElementById('cart');
-    cartDiv.innerHTML = ''; // Limpia el carrito antes de volver a mostrarlo
+    cartDiv.innerHTML = ''; // Limpia el contenido del carrito antes de agregar los productos
 
     if (cart.length === 0) {
+        // Si no hay productos, muestra un mensaje de carrito vacío
         cartDiv.innerHTML = '<p>Tu carrito está vacío.</p>';
     } else {
+        // Si hay productos, muestra cada uno de ellos
         cart.forEach((item, index) => {
             const cartItem = document.createElement('div');
             cartItem.innerHTML = `
-                <p>${item}</p>
+                <p>${item.product} - $${item.price}</p>
                 <button onclick="removeFromCart(${index})">Eliminar</button>
             `;
-            cartDiv.appendChild(cartItem);
+            cartDiv.appendChild(cartItem); // Añade el producto al DOM
         });
     }
+
+    // Actualiza el total en el DOM
+    document.getElementById('total').textContent = `Total: $${total}`;
 }
