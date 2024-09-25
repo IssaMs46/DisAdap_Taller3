@@ -48,7 +48,7 @@ function sendWhatsAppMessage() {
     // Define el número de teléfono
     const phoneNumber = '+573003298265';
     // Define el mensaje que quieres enviar
-    const message = 'Hola! estoy interesado en comprar los siguientes productos: ' + cart.map(item => `${item.product} - $${item.price}`).join(', ') + `. Total: $${total}`;
+    const message = 'Hola Hotel Pegazuleco! estoy interesado en comprar los siguientes productos: ' + cart.map(item => `${item.product} - $${item.price}`).join(', ') + `. Total: $${total}`;
     // Crea la URL de WhatsApp
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     // Abre WhatsApp en una nueva pestaña
