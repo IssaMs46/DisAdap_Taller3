@@ -13,6 +13,12 @@ h1, h2 {
     flex-wrap: wrap;
     margin-top: 20px;
 }
+#gallery-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
 
 .product {
     text-align: center;
@@ -55,4 +61,71 @@ button:hover {
     border: none;
     border-radius: 5px;
     cursor: not-allowed; /* Deshabilitado por ahora */
+}
+
+#cart-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#cart-button:hover {
+    background-color: #45a049;
+}
+
+#cart-section {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    width: 300px;
+}
+
+#cart-items p {
+    margin: 5px 0;
+}
+
+#cart-items button {
+    margin-left: 10px;
+    padding: 5px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#cart-items button:hover {
+    background-color: #c0392b;
+}
+#checkout {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#back-to-gallery {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#back-to-gallery:hover {
+    background-color: #45a049;
 }

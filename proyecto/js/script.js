@@ -23,26 +23,37 @@ function removeFromCart(index) {
 
 // Función para mostrar el carrito y el total
 function displayCart() {
-    const cartDiv = document.getElementById('cart');
-    cartDiv.innerHTML = ''; // Limpia el contenido del carrito antes de agregar los productos
+    const cartItemsDiv = document.getElementById('cart-items');
+    cartItemsDiv.innerHTML = ''; // Limpia el contenido previo
 
     if (cart.length === 0) {
-        // Si no hay productos, muestra un mensaje de carrito vacío
-        cartDiv.innerHTML = '<p>Tu carrito está vacío.</p>';
+        cartItemsDiv.innerHTML = '<p>Tu carrito está vacío.</p>';
     } else {
-        // Si hay productos, muestra cada uno de ellos
         cart.forEach((item, index) => {
             const cartItem = document.createElement('div');
             cartItem.innerHTML = `
                 <p>${item.product} - $${item.price}</p>
                 <button onclick="removeFromCart(${index})">Eliminar</button>
             `;
-            cartDiv.appendChild(cartItem); // Añade el producto al DOM
+            cartItemsDiv.appendChild(cartItem);
         });
     }
 
     // Actualiza el total en el DOM
     document.getElementById('total').textContent = `Total: $${total}`;
+}
+// Función para mostrar/ocultar el carrito
+function toggleCart() {
+    const cartSection = document.getElementById('cart-section');
+    const gallerySection = document.getElementById('gallery-section');
+    
+    if (cartSection.style.display === 'none' || cartSection.style.display === '') {
+        cartSection.style.display = 'block';
+        gallerySection.style.display = 'none';
+    } else {
+        cartSection.style.display = 'none';
+        gallerySection.style.display = 'flex';
+    }
 }
 function sendWhatsAppMessage() {
     // Define el número de teléfono
