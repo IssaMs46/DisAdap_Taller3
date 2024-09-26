@@ -21,8 +21,12 @@ h1, h2 {
 }
 
 .product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .product img {
@@ -41,7 +45,24 @@ button {
     cursor: pointer;
     border-radius: 5px;
 }
+button#add-to-cart, .quantity-controls {
+    width: 100%; /* Asegura que ambos (botón y controles) tengan el mismo ancho */
+    text-align: center;
+}
+button#add-to-cart {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
 
+button#add-to-cart:hover {
+    background-color: #45a049;
+}
 button:hover {
     background-color: #45a049;
 }
@@ -128,4 +149,30 @@ button:hover {
 
 #back-to-gallery:hover {
     background-color: #45a049;
+}
+.quantity-controls {
+    display: flex;
+    justify-content: center;    
+    align-items: center;        
+    gap: 15px;                  
+    margin-top: 10px;           
+}
+.quantity-controls button {
+    padding: 5px 15px;          
+    background-color: #4CAF50;  
+    color: white;               
+    border: none;              
+    border-radius: 5px;        
+    font-size: 16px;         
+    cursor: pointer;        
+}
+
+.quantity-controls button:hover {
+    background-color: #45a049;  
+}
+
+.quantity-controls span {
+    font-size: 18px;         
+    padding: 0 10px;          
+    display: inline-block;     
 }
