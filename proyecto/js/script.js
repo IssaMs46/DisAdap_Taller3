@@ -3,8 +3,18 @@ let total = 0;
 
 // Función para agregar productos al carrito
 function addToCart(product, price) {
-    // Añade el producto y su precio al array del carrito
-    cart.push({ product, price });
+    // Busca si el producto ya existe en el carrito
+    const existingProduct = cart.find(item => item.product === product);
+
+    if (existingProduct) {
+        // Si el producto ya existe, incrementa la cantidad
+        existingProduct.quantity += 1;
+        existingProduct.price += price; // Actualiza el precio total de ese producto
+    } else {
+        // Si el producto no existe, lo agrega al carrito con cantidad 1
+        cart.push({ product, unitPrice: price, price: price, quantity: 1 });
+    }
+
     // Actualiza el total
     total += price;
     // Muestra el carrito actualizado
@@ -13,10 +23,19 @@ function addToCart(product, price) {
 
 // Función para eliminar productos del carrito
 function removeFromCart(index) {
-    // Resta el precio del producto eliminado del total
-    total -= cart[index].price;
-    // Remueve el producto del array usando el índice
-    cart.splice(index, 1);
+    const product = cart[index];
+
+    if (product.quantity > 1) {
+        // Si hay más de un producto, reduce la cantidad y el precio total
+        product.quantity -= 1;
+        product.price -= product.unitPrice;
+    } else {
+        // Si solo hay uno, lo elimina del carrito
+        cart.splice(index, 1);
+    }
+
+    // Actualiza el total
+    total -= product.unitPrice;
     // Muestra el carrito actualizado
     displayCart();
 }
@@ -32,8 +51,9 @@ function displayCart() {
         cart.forEach((item, index) => {
             const cartItem = document.createElement('div');
             cartItem.innerHTML = `
-                <p>${item.product} - $${item.price}</p>
-                <button onclick="removeFromCart(${index})">Eliminar</button>
+                <p>${item.product} - $${item.price} (${item.quantity})</p>
+                <button onclick="addToCart('${item.product}', ${item.unitPrice})">Añadir</button>
+                <button onclick="removeFromCart(${index})">Quitar</button>
             `;
             cartItemsDiv.appendChild(cartItem);
         });
