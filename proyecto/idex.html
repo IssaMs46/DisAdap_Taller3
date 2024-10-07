@@ -9,10 +9,10 @@
 <body>
     <h1>Tienda - Hotel Pegazuleco</h1>
 
-    <!-- Botón del Carrito de compras-->
+    <!-- Botón del Carrito -->
     <button id="cart-button" onclick="toggleCart()">🛒</button>
     
-    <!-- Galerías -->
+    <!-- Galería de Productos -->
     <div id="gallery-section" class="gallery">
         <div class="product">
             <img src="images/Estadia.jpg" alt="Estadía">
@@ -38,7 +38,7 @@
             </div>
         </div>
 
-        <div class="product"></div>
+        <div class="product">
             <img src="images/carro.jpg" alt="Rentar Carro">
             <h3>Rentar Carro</h3>
             <p>$200.000</p>
@@ -75,11 +75,11 @@
         </div>
     </div>
 
-    <!-- Carrito de compras -->
+    <!-- Carrito -->
     <div id="cart-section" style="display: none;">
         <h2>Carrito</h2>
         <div id="cart-items">
-            <!-- Aquí se mostrarán los productos del carrito de compras-->
+            <!-- Aquí se mostrarán los productos del carrito -->
         </div>
         <h3 id="total">Total: $0</h3>
         <button id="checkout" onclick="sendWhatsAppMessage()">Checkout</button>
