@@ -22,15 +22,21 @@ function addToCart(product, price) {
 
 function removeFromCart(index) {
     const product = cart[index];
-
+    
     if (product.quantity > 1) {
         // Si hay más de un producto, reduce la cantidad y el precio total
         product.quantity -= 1;
         product.price -= product.unitPrice;
     } else {
-        // Si solo hay uno, lo elimina del carrito
-        cart.splice(index, 1);
+        const confirmation = confirm(`¿Estás seguro de que deseas eliminar  ${product.product} de tu carrito?`);
+        if(confirmation){
+            // Si solo hay uno, lo elimina del carrito
+            cart.splice(index, 1);
+        }
+        
     }
+        
+   
 
     // Actualiza el total
     total -= product.unitPrice;
